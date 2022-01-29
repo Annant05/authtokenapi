@@ -1,0 +1,5 @@
+DB_HOSTNAME = "testing.anaws.me"
+DB_DBNAME = "zappadbtest"
+DB_USERNAME = "postgres"
+DB_PASSWORD = "somepassword"
+DB_PORT = "5432"
