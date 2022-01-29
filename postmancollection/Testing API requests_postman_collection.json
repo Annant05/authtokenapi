@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "ee58ebc2-27c0-4d9d-8c3b-56b83f32c85d",
+		"name": "Testing API requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Step 1 : login and get auth token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"1234567890\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/token/auth/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"token",
+						"auth",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Step 1 : get auth token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"1234567890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://testing.com:8080/api/token/auth/",
+							"protocol": "http",
+							"host": [
+								"testing",
+								"anaws",
+								"me"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"token",
+								"auth",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 23 Oct 2021 06:38:21 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.7.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "89"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"6f7180ea5baa78701818f4216b71964ed4b19326\",\n    \"user_id\": 1,\n    \"email\": \"admin@com\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Step 2: create a new Item in list",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 49abaa3a6476f89bf7a70d72e5a4efe78e7dc3f8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \"Sugar\",\r\n\"code\": \"Item001\",\r\n\"category\": \"Grocery\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/list/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"list",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Step 2: create a new Item in list",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token 8a5fff0ff9a180d721b2a5fe34550c5b4fe360ed",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\": \"Sugar\",\r\n\"code\": \"Item001\",\r\n\"category\": \"Grocery\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://devapi.deployed.com:8888/api/list/",
+							"protocol": "http",
+							"host": [
+								"devapi",
+								"deployed",
+								"anaws",
+								"me"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"list",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 26 Oct 2021 09:09:45 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.7.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "104"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"Sugar\",\n    \"code\": \"Item001\",\n    \"category\": \"Grocery\",\n    \"created_at\": \"2021-10-26T09:09:45.244181Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Step 3: List all the Items in the list.",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 49abaa3a6476f89bf7a70d72e5a4efe78e7dc3f8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8088/api/list/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"list",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Step 3: List all the Items in the list.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token 8a5fff0ff9a180d721b2a5fe34550c5b4fe360ed",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://devapi.deployed.com:8888/api/list/",
+							"protocol": "http",
+							"host": [
+								"devapi",
+								"deployed",
+								"anaws",
+								"me"
+							],
+							"port": "8888",
+							"path": [
+								"api",
+								"list",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 26 Oct 2021 09:10:08 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.7.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "116"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Items\": [\n        {\n            \"id\": 1,\n            \"name\": \"Sugar\",\n            \"code\": \"Item001\",\n            \"category\": \"Grocery\",\n            \"created_at\": \"2021-10-26T09:09:45.244181Z\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}

@@ -10,7 +10,7 @@ from accounts.models import ListItemModel
 from accounts.serializers import ItemSerializer
 
 
-class ListItems(APIView):
+class ListUsers(APIView):
     """
     View to list all Items in the system.
 
