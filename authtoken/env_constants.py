@@ -1,5 +1,7 @@
-DB_HOSTNAME = "testing.anaws.me"
-DB_DBNAME = "zappadbtest"
-DB_USERNAME = "postgres"
-DB_PASSWORD = "somepassword"
-DB_PORT = "5432"
+import os
+
+DB_HOSTNAME = os.environ["DB_HOSTNAME"]
+DB_DBNAME = os.environ["DB_DBNAME"]
+DB_USERNAME = os.environ["DB_USERNAME"]
+DB_PASSWORD = os.environ["DB_PASSWORD"]
+DB_PORT = os.environ["DB_PORT"]

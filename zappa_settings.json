@@ -3,14 +3,50 @@
         "aws_region": "ap-south-1",
         "django_settings": "authtoken.settings",
         "profile_name": "default",
-        "project_name": "token-based-aut",
+        "project_name": "token-based-auth",
         "runtime": "python3.8",
-        "s3_bucket": "zappa-auth-toke",
+        "s3_bucket": "zappa-token-based-auth-bucket",
         "keep_warm": false,
         "route53_enabled": true,
+        "delete_s3_zip": false,
         "touch": true,
         "touch_path": "/admin/",
+        "exclude": [
+            "*.gz",
+            "*.rar",
+            "*.zip",
+            "env/*",
+            ".env"
+        ],
         "apigateway_enabled": true,
-        "apigateway_description": "auth-token-application" 
+        "apigateway_description": "token-based-auth-gateway",
+        "lambda_description": "token-based-auth-lambda",
+        "vpc_config": {
+            "SubnetIds": [
+                "subnet-1",
+                "subnet-2",
+                "subnet-3"
+            ],
+            "SecurityGroupIds": [
+                "sg-1"
+            ]
+        },
+        "events": [
+            {
+                "function": "execsqs.addevent.add_event",
+                "event_source": {
+                    "arn": "arn:aws:sqs:ap-south-1:AWS_ID:QUEUE_NAME",
+                    "batch_size": 1,
+                    "enabled": true
+                }
+            }
+        ],
+        "environment_variables": {
+            "DB_HOSTNAME": "",
+            "DB_DBNAME": "zappadbtest",
+            "DB_USERNAME": "rpzpostgres",
+            "DB_PASSWORD": "",
+            "DB_PORT": "5413"
+        }
     }
 }
