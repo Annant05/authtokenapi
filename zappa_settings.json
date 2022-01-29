@@ -1,0 +1,16 @@
+{
+    "dev": {
+        "aws_region": "ap-south-1",
+        "django_settings": "authtoken.settings",
+        "profile_name": "default",
+        "project_name": "token-based-aut",
+        "runtime": "python3.8",
+        "s3_bucket": "zappa-auth-toke",
+        "keep_warm": false,
+        "route53_enabled": true,
+        "touch": true,
+        "touch_path": "/admin/",
+        "apigateway_enabled": true,
+        "apigateway_description": "auth-token-application" 
+    }
+}

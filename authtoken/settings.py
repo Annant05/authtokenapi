@@ -12,8 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
-from accounts.env_constants import (DB_DBNAME, DB_HOSTNAME, DB_PASSWORD,
-                                    DB_PORT, DB_USERNAME)
+from authtoken.env_constants import (DB_DBNAME, DB_HOSTNAME, DB_PASSWORD,
+                                     DB_PORT, DB_USERNAME)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
