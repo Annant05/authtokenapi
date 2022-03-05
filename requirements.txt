@@ -2,3 +2,4 @@ Django==3.2.8
 djangorestframework==3.13.1
 psycopg2-binary==2.9.3
 zappa==0.54.1
+debugpy==1.5.1
